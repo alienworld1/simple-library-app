@@ -8,5 +8,13 @@ function Book(title, author, pages, read) {
 }
 
 function addBooktoLibrary(book) {
-    MyLibrary.push(Book);
+    MyLibrary.push(book);
+}
+
+const cardsContainer = document.querySelector("#cards-container");
+
+function removeAllChildElements(parentNode) {
+    while (parentNode.firstChild) {
+        parentNode.removeChild(parentNode.firstChild);
+    }
 }
