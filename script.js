@@ -22,6 +22,7 @@ function removeAllChildElements(parentNode) {
 function createBookCard(book) {
     const card = document.createElement("div");
     card.classList.add("card");
+    console.log(book);
 
     const bookTitle = document.createElement("div");
     bookTitle.classList.add("bold");
@@ -34,7 +35,7 @@ function createBookCard(book) {
     bookPages.textContent = `(${book.pages} pages)`;
 
     card.appendChild(bookTitle);
-    card.appendChild(bookDescription);
+    card.appendChild(bookAuthor);
     card.appendChild(bookPages);
 
     return card;
