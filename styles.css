@@ -16,3 +16,7 @@ body {
     background-color: #fff7ed;
     border-radius: 4px;
 }
+
+.bold {
+    font-weight: 800;
+}
