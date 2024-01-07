@@ -27,11 +27,15 @@ function createBookCard(book) {
     bookTitle.classList.add("bold");
     bookTitle.textContent = book.title;
 
-    const bookDescription = document.createElement("div");
-    bookDescription.innerHTML = `Author: ${book.author}<br><em>(${book.pages})</em>`;
+    const bookAuthor = document.createElement("div");
+    bookAuthor.textContent = `Author: ${book.author}`;
+
+    const bookPages = document.createElement("em");
+    bookPages.textContent = `(${book.pages} pages)`;
 
     card.appendChild(bookTitle);
     card.appendChild(bookDescription);
+    card.appendChild(bookPages);
 
     return card;
 }
