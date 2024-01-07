@@ -18,3 +18,27 @@ function removeAllChildElements(parentNode) {
         parentNode.removeChild(parentNode.firstChild);
     }
 }
+
+function createBookCard(book) {
+    const card = document.createElement("div");
+    card.classList.add("card");
+
+    const bookTitle = document.createElement("div");
+    bookTitle.classList.add("bold");
+    bookTitle.textContent = book.title;
+
+    const bookDescription = document.createElement("div");
+    bookDescription.innerHTML = `Author: ${book.author}<br><em>(${book.pages})</em>`;
+
+    card.appendChild(bookTitle);
+    card.appendChild(bookDescription);
+
+    return card;
+}
+
+function refreshCardsContainer() {
+    removeAllChildElements(cardsContainer);
+    MyLibrary.forEach((book) => {
+
+    });
+}
