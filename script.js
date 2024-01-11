@@ -50,12 +50,13 @@ function refreshCardsContainer() {
     });
 }
 
-const book1 = new Book("The Hobbit", "J.R.R. Tolkien", 295, true);
-const book2 = new Book("The Art of War", "Sun Tzu", 64, true);
-const book3 = new Book("1984", "George Orwell", 258, false);
+// Example books
+// const book1 = new Book("The Hobbit", "J.R.R. Tolkien", 295, true);
+// const book2 = new Book("The Art of War", "Sun Tzu", 64, true);
+// const book3 = new Book("1984", "George Orwell", 258, false);
 
-MyLibrary.push(book1);
-MyLibrary.push(book2);
-MyLibrary.push(book3);
+// MyLibrary.push(book1);
+// MyLibrary.push(book2);
+// MyLibrary.push(book3);
 
-refreshCardsContainer();
+// refreshCardsContainer();
