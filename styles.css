@@ -35,3 +35,26 @@ h1 {
     font-size: 3rem;
     margin: 12px;
 }
+
+.button {
+    margin: 16px;
+    padding: 16px;
+    border-radius: 5px;
+    border: none;
+    background-color: #60a5fa;
+    font-size: 1.25rem;
+}
+
+.button:hover {
+    background-color: #93c5fd;
+}
+
+.button:active {
+    background-color: #3b82f6;
+    border: 3px solid #FD7574;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+}
