@@ -88,3 +88,9 @@ footer {
 #submit-button:active {
     background-color: #15803d;
 }
+
+section.form-submit {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
