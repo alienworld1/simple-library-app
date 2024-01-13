@@ -58,3 +58,33 @@ footer {
     display: flex;
     justify-content: center;
 }
+
+.dialog-btn {
+    font-size: 1rem;
+    padding: 12px;
+    color: #f8fafc;
+}
+
+#cancel-button {
+    background-color: #dc2626;
+}
+
+#cancel-button:hover {
+    background-color: #ef4444;
+}
+
+#cancel-button:active {
+    background-color: #b91c1c;
+}
+
+#submit-button {
+    background-color: #16a34a;
+}
+
+#submit-button:hover {
+    background-color: #22c55e;
+}
+
+#submit-button:active {
+    background-color: #15803d;
+}
