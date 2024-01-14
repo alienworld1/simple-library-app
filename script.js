@@ -41,6 +41,22 @@ function createBookCard(book) {
     card.appendChild(bookAuthor);
     card.appendChild(bookPages);
 
+    const hasReadMarker = document.createElement("input");
+    hasReadMarker.setAttribute("type", "checkbox");
+    hasReadMarker.classList.add("scale-up");
+
+    if (book.read) hasReadMarker.setAttribute("checked", "true");
+
+    const readSection = document.createElement("section");
+    const readLabel = document.createElement("span");
+    
+    readLabel.textContent = "Have you read this book?";
+    
+    readSection.appendChild(readLabel);
+    readSection.appendChild(hasReadMarker);
+
+    card.appendChild(readSection);
+
     return card;
 }
 

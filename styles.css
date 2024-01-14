@@ -25,8 +25,20 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     background-color: #fff7ed;
     border-radius: 4px;
-    width: 200px;
+    width: 220px;
     flex: none;
+}
+
+.card input[type="checkbox"] {
+    padding: 0;
+}
+
+.card span {
+    padding-right: 16px;
+}
+
+.card section {
+    margin-top: 16px;
 }
 
 .bold {
