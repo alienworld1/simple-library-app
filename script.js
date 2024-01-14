@@ -12,6 +12,9 @@ function addBooktoLibrary(book) {
 }
 
 const cardsContainer = document.querySelector("#cards-container");
+const newBookDialog = document.querySelector("#new-book-dialog");
+const newBookButton = document.querySelector("#new-book-btn");
+const closeDialogButton = document.querySelector("#cancel-button");
 
 function removeAllChildElements(parentNode) {
     while (parentNode.firstChild) {
@@ -49,6 +52,14 @@ function refreshCardsContainer() {
         cardsContainer.appendChild(bookCard);
     });
 }
+
+newBookButton.addEventListener("click", () => {
+    newBookDialog.showModal();
+});
+
+closeDialogButton.addEventListener("click", () => {
+    newBookDialog.close();
+})
 
 // Example books
 const book1 = new Book("The Hobbit", "J.R.R. Tolkien", 295, true);
