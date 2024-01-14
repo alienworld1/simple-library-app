@@ -94,3 +94,17 @@ section.form-submit {
     justify-content: center;
     gap: 8px;
 }
+
+#new-book-dialog {
+    background-color: #fdba74;
+    padding: 16px;
+}
+
+section.new-book-section {
+    margin: 16px;
+}
+
+.new-book-section label {
+    display: inline-block;
+    width: 24rem;
+}
