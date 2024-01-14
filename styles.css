@@ -98,6 +98,7 @@ section.form-submit {
 #new-book-dialog {
     background-color: #fdba74;
     padding: 16px;
+    border-radius: 10px;
 }
 
 section.new-book-section {
@@ -107,4 +108,9 @@ section.new-book-section {
 .new-book-section label {
     display: inline-block;
     width: 24rem;
+}
+
+input#hasRead {
+    transform: scale(1.5);
+    accent-color: #38bdf8;
 }
