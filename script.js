@@ -118,5 +118,8 @@ submitNewBookButton.addEventListener("click", () => {
     MyLibrary.push(book);
     newBookDialog.close();
 
+    const form = document.querySelector("#new-book-dialog form");
+    form.reset();
+
     refreshCardsContainer();
 })
