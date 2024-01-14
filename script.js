@@ -5,6 +5,7 @@ function Book(title, author, pages, read) {
     this.author = author;
     this.pages = pages;
     this.read = read;
+    this.data = -1;
 }
 
 function addBooktoLibrary(book) {
@@ -56,6 +57,13 @@ function createBookCard(book) {
     readSection.appendChild(hasReadMarker);
 
     card.appendChild(readSection);
+
+    const removeButton = document.createElement("button");
+    removeButton.textContent = "Remove this book";
+    removeButton.classList.add("button");
+    removeButton.classList.add("bold");
+
+    card.appendChild(removeButton);
 
     return card;
 }
@@ -115,6 +123,8 @@ submitNewBookButton.addEventListener("click", () => {
 
     if (!book) return;
 
+    book.data = MyLibrary.length;
+
     MyLibrary.push(book);
     newBookDialog.close();
 
@@ -123,3 +133,11 @@ submitNewBookButton.addEventListener("click", () => {
 
     refreshCardsContainer();
 })
+
+const example = new Book("The Enigma Code", "Christopher Knight", 543, true);
+const example2 = new Book("The Hobbit", "J.R.R. Tolkien", 295, false);
+
+MyLibrary.push(example);
+MyLibrary.push(example2);
+
+refreshCardsContainer();
