@@ -24,6 +24,16 @@ function removeAllChildElements(parentNode) {
     }
 }
 
+function removeBookFromLibrary(index) {
+    MyLibrary.splice(index, 1);
+    refreshCardsContainer();
+}
+
+function removeBook(event) {
+    console.log(event.currentTarget.id);
+    removeBookFromLibrary(+event.currentTarget.id);
+}
+
 function createBookCard(book) {
     const card = document.createElement("div");
     card.classList.add("card");
@@ -62,6 +72,8 @@ function createBookCard(book) {
     removeButton.textContent = "Remove this book";
     removeButton.classList.add("button");
     removeButton.classList.add("bold");
+
+    removeButton.addEventListener("click", removeBook);
 
     card.appendChild(removeButton);
 
@@ -102,9 +114,15 @@ function getBookFromForm() {
 
 function refreshCardsContainer() {
     removeAllChildElements(cardsContainer);
+    let counter = 0;
 
     MyLibrary.forEach((book) => {
         const bookCard = createBookCard(book);
+
+        const removeButton = bookCard.querySelector("button");
+        removeButton.id = counter;
+        counter++;
+        
         cardsContainer.appendChild(bookCard);
     });
 }
@@ -123,8 +141,6 @@ submitNewBookButton.addEventListener("click", () => {
 
     if (!book) return;
 
-    book.data = MyLibrary.length;
-
     MyLibrary.push(book);
     newBookDialog.close();
 
@@ -133,11 +149,3 @@ submitNewBookButton.addEventListener("click", () => {
 
     refreshCardsContainer();
 })
-
-const example = new Book("The Enigma Code", "Christopher Knight", 543, true);
-const example2 = new Book("The Hobbit", "J.R.R. Tolkien", 295, false);
-
-MyLibrary.push(example);
-MyLibrary.push(example2);
-
-refreshCardsContainer();
