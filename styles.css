@@ -124,10 +124,13 @@ section.new-book-section {
 }
 
 input#hasRead {
-    transform: scale(1.5);
     accent-color: #38bdf8;
 }
 
 ::backdrop {
     background: #1e293baa;
+}
+
+.scale-up {
+    transform: scale(1.5);
 }
