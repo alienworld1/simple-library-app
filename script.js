@@ -15,6 +15,7 @@ const cardsContainer = document.querySelector("#cards-container");
 const newBookDialog = document.querySelector("#new-book-dialog");
 const newBookButton = document.querySelector("#new-book-btn");
 const closeDialogButton = document.querySelector("#cancel-button");
+const submitNewBookButton = document.querySelector("#submit-button");
 
 function removeAllChildElements(parentNode) {
     while (parentNode.firstChild) {
@@ -25,7 +26,6 @@ function removeAllChildElements(parentNode) {
 function createBookCard(book) {
     const card = document.createElement("div");
     card.classList.add("card");
-    console.log(book);
 
     const bookTitle = document.createElement("div");
     bookTitle.classList.add("bold");
@@ -60,6 +60,38 @@ function createBookCard(book) {
     return card;
 }
 
+function getBookFromForm() {
+    const title = document.querySelector("#title");
+    const author = document.querySelector("#author");
+    const pages = document.querySelector("#pages");
+    const hasRead = document.querySelector("#hasRead");
+
+    if (!title.value) {
+        alert("Please enter an appropriate title.");
+        return;
+    }
+
+    if (!author.value) {
+        alert("Please enter an appropriate author.");
+        return;
+    }
+
+    if (!pages.value) {
+        alert("Please enter the number of pages in this book!");
+        return;
+    }
+
+    let numPages = +pages.value;
+    if (numPages < 1) {
+        alert("Please enter an appropriate number of pages.");
+        return;
+    }
+
+    const newBook = new Book(title.value, author.value, numPages, hasRead.checked);
+
+    return newBook;
+}
+
 function refreshCardsContainer() {
     removeAllChildElements(cardsContainer);
 
@@ -77,15 +109,14 @@ closeDialogButton.addEventListener("click", () => {
     newBookDialog.close();
 })
 
-// Example books
-const book1 = new Book("The Hobbit", "J.R.R. Tolkien", 295, true);
-const book2 = new Book("The Art of War", "Sun Tzu", 64, true);
-const book3 = new Book("1984", "George Orwell", 258, false);
-const book4 = new Book("Mein Kampf", "Adolf Hitler", 600, true);
+submitNewBookButton.addEventListener("click", () => {
+    event.preventDefault();
+    const book = getBookFromForm();
 
-MyLibrary.push(book1);
-MyLibrary.push(book2);
-MyLibrary.push(book3);
-MyLibrary.push(book4);
+    if (!book) return;
 
-refreshCardsContainer();
+    MyLibrary.push(book);
+    newBookDialog.close();
+
+    refreshCardsContainer();
+})
